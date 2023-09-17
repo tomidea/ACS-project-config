@@ -10,11 +10,13 @@
 
 # Bastion ami installation
 -------------------------------------
+```
 yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 yum install -y dnf-utils http://rpms.remirepo.net/enterprise/remi-release-8.rpm
 yum install wget vim python3 telnet htop git mysql net-tools chrony -y
 systemctl start chronyd
 systemctl enable chronyd
+```
 
 # Nginx ami installation 
 -----------------------------------------
@@ -56,7 +58,7 @@ sudo mkdir /etc/ssl/private
 
 sudo chmod 700 /etc/ssl/private
 
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/ACS.key -out /etc/ssl/certs/ACS.crt
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/aremac.key -out /etc/ssl/certs/aremac.crt
 
 sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 ```
