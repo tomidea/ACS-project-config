@@ -102,7 +102,7 @@ yum install -y  ./build/amazon-efs-utils*rpm
 ```
 yum install -y mod_ssl
 
-openssl req -newkey rsa:2048 -nodes -keyout /etc/pki/tls/private/ACS.key -x509 -days 365 -out /etc/pki/tls/certs/ACS.crt
+openssl req -newkey rsa:2048 -nodes -keyout /etc/pki/tls/private/aremac.key -x509 -days 365 -out /etc/pki/tls/certs/aremac.crt
 
 vi /etc/httpd/conf.d/ssl.conf
 ```
