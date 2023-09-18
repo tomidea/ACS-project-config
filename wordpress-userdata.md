@@ -1,6 +1,6 @@
 #!/bin/bash
 mkdir /var/www/
-sudo mount -t efs -o tls,accesspoint=fsap-0e9ee4fd4663b9b24 fs-03a06806d833a5026:/ /var/www/
+sudo mount -t efs -o tls,accesspoint=fsap-0d896e99ee2a18b75 fs-00d704d1eeacd68d0:/ /var/www/
 yum install -y httpd 
 systemctl start httpd
 systemctl enable httpd
@@ -18,7 +18,7 @@ cp -R /wordpress/* /var/www/html/
 cd /var/www/html/
 touch healthstatus
 sed -i "s/localhost/aremac-database.cq624665fv9h.us-east-1.rds.amazonaws.com/g" wp-config.php 
-sed -i "s/username_here/aremacadmin/g" wp-config.php 
+sed -i "s/username_here/ACSadmin/g" wp-config.php 
 sed -i "s/password_here/admin123/g" wp-config.php 
 sed -i "s/database_name_here/wordpressdb/g" wp-config.php 
 chcon -t httpd_sys_rw_content_t /var/www/html/ -R
